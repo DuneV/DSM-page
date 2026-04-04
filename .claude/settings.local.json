@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(which python3:*)",
+      "Bash(npm create:*)",
+      "Bash(cd /home/krita/Documents/2026-1/ASG/DSM_page/dsm-labs && npm install 2>&1 | tail -5)",
+      "Bash(npm install:*)",
+      "Bash(npx vite:*)",
+      "Bash(cp -r /home/krita/Documents/2026-1/ASG/DSM_page/scissor_jack /home/krita/Documents/2026-1/ASG/DSM_page/dsm-labs/public/stl && ls /home/krita/Documents/2026-1/ASG/DSM_page/dsm-labs/public/stl/)"
+    ]
+  }
+}
