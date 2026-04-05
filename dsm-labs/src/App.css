@@ -590,11 +590,50 @@
 }
 
 /* ============================================================
-   FOOTER REFINEMENT
+   FOOTER
 ============================================================ */
 .footer {
   background: var(--primary);
   color: rgba(255, 255, 255, 0.5);
+  padding: 20px 0 16px;
+  border-top: 1px solid #1e3a4a;
+}
+
+.footer-courses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.footer-course {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.footer-course-code {
+  background: #1e3a4a;
+  color: var(--cream);
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+.footer-course-name {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.footer-meta {
+  text-align: center;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.3);
+  margin: 0;
+  letter-spacing: 0.03em;
 }
 
 /* ============================================================

@@ -19,6 +19,16 @@ import AltAbsorsor from './labs/altAbsorsor/AltAbsorsor'
 import AltVigas from './labs/altVigas/AltVigas'
 import './App.css'
 
+function period() {
+  const now = new Date()
+  const sem = now.getMonth() < 6 ? 1 : 2   // 0-5 → enero-junio = 1, 6-11 → julio-dic = 2
+  return `${now.getFullYear()}-${sem}0`
+}
+
+const COURSES = [
+  { code: 'IMEC2540', name: 'Dinamica de Sistemas Mecanicos' },
+]
+
 function App() {
   return (
     <div className="app">
@@ -46,7 +56,17 @@ function App() {
       </main>
       <footer className="footer">
         <div className="container">
-          <p>GL-IMEC2540-01 | Dinamica de Sistemas Mecanicos | Universidad de los Andes | 2025-20</p>
+          <div className="footer-courses">
+            {COURSES.map(c => (
+              <span key={c.code} className="footer-course">
+                <span className="footer-course-code">{c.code}</span>
+                <span className="footer-course-name">{c.name}</span>
+              </span>
+            ))}
+          </div>
+          <p className="footer-meta">
+            Universidad de los Andes · {period()}
+          </p>
         </div>
       </footer>
     </div>

@@ -466,6 +466,39 @@ function NeuralNetworkSection() {
           Para el informe: comparar al menos 2 metodos (ej. MLP vs MLP con diferente arquitectura, o MLP vs sin filtrado).
         </p>
       </div>
+
+      {/* TensorFlow Playground */}
+      <div className="card" style={{ marginBottom: 24 }}>
+        <h3>Playground Interactivo — TensorFlow</h3>
+        <p style={{ fontSize: 14, marginBottom: 12 }}>
+          Experimenta con la arquitectura, activaciones y tasa de aprendizaje en tiempo real.
+          Observa cómo la red aprende a separar clases no lineales, análogo al problema de clasificación de movimientos.
+        </p>
+        <div style={{
+          position: 'relative',
+          width: '100%',
+          paddingBottom: '72%',
+          borderRadius: 10,
+          overflow: 'hidden',
+          border: '1px solid #e2e8f0',
+        }}>
+          <iframe
+            src="https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=4,2&seed=0.51351&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false"
+            title="TensorFlow Playground"
+            style={{
+              position: 'absolute',
+              top: 0, left: 0,
+              width: '100%',
+              height: '100%',
+              border: 'none',
+            }}
+            allow="accelerometer"
+          />
+        </div>
+        <p style={{ fontSize: 12, color: '#718096', marginTop: 8 }}>
+          Fuente: <strong>playground.tensorflow.org</strong> — puedes abrir el enlace en una pestaña nueva para mayor espacio.
+        </p>
+      </div>
     </div>
   )
 }
