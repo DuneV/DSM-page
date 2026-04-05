@@ -78,27 +78,68 @@
 /* ===== HOME PAGE ===== */
 .home-hero {
   text-align: center;
-  padding: 60px 0;
+  padding: 48px 0 64px;
 }
 
 .home-hero h1 {
   font-size: 2.8rem;
   color: var(--primary);
   margin-bottom: 12px;
+  letter-spacing: -0.02em;
 }
 
-.home-hero p {
-  font-size: 1.2rem;
+.home-hero > p {
+  font-size: 1.1rem;
   color: var(--text-light);
   max-width: 600px;
-  margin: 0 auto 40px;
+  margin: 0 auto 8px;
+}
+
+/* ===== HOME SECTIONS ===== */
+.home-section {
+  margin-top: 48px;
+  text-align: left;
+}
+
+.home-section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border);
+}
+
+.home-section-header h2 {
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin: 0;
+}
+
+.home-section-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.home-section-badge.available {
+  background: #c6f6d5;
+  color: #276749;
+}
+
+.home-section-badge.coming-soon {
+  background: #e9d8fd;
+  color: #553c9a;
 }
 
 .lab-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 24px;
-  margin-top: 40px;
+  margin-top: 16px;
 }
 
 .lab-card {
@@ -140,6 +181,34 @@
 .lab-card p {
   font-size: 14px;
   color: var(--text-light);
+}
+
+/* Faded/disabled card variant */
+.lab-card--faded {
+  opacity: 0.45;
+  cursor: not-allowed;
+  position: relative;
+  pointer-events: none;
+  filter: grayscale(30%);
+}
+
+.lab-card--faded:hover {
+  transform: none;
+  box-shadow: var(--shadow);
+  border-color: var(--border);
+}
+
+.lab-card-lock {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-light);
+  background: var(--border);
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 /* ===== LAB PAGE LAYOUT ===== */
@@ -245,3 +314,286 @@
   margin-bottom: 8px;
   text-align: center;
 }
+
+/* ============================================================
+   APOYO BUTTON (likes)
+============================================================ */
+.apoyo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  padding: 4px 10px;
+  border: 1.5px solid #334155;
+  border-radius: 20px;
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  color: var(--text-light);
+  font-size: 13px;
+  line-height: 1;
+}
+
+.apoyo-btn:hover {
+  border-color: #ee826d;
+  background: rgba(238, 130, 109, 0.08);
+  transform: scale(1.05);
+}
+
+.apoyo-btn--active {
+  border-color: #ee826d;
+  background: rgba(238, 130, 109, 0.12);
+  color: #ee826d;
+}
+
+.apoyo-icon {
+  font-size: 15px;
+  line-height: 1;
+  transition: transform 0.2s;
+}
+
+.apoyo-btn--active .apoyo-icon {
+  transform: scale(1.25);
+}
+
+.apoyo-count {
+  font-weight: 600;
+  font-size: 12px;
+}
+
+/* ============================================================
+   BANK FILTER BUTTONS
+============================================================ */
+.bank-filter {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 10px 0 18px;
+}
+
+.bank-filter-btn {
+  padding: 5px 16px;
+  border-radius: 20px;
+  border: 1.5px solid var(--border);
+  background: transparent;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s;
+  color: var(--text-light);
+  font-family: var(--font);
+}
+
+.bank-filter-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: rgba(20, 36, 48, 0.05);
+}
+
+.bank-filter-btn.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+/* ============================================================
+   BANCO BADGE
+============================================================ */
+.home-section-badge.bank {
+  background: var(--cream);
+  color: #744210;
+}
+
+/* ============================================================
+   ALT LAB CARD STYLE (home page)
+============================================================ */
+.lab-card--alt {
+  border-left: 3px solid transparent;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lab-card--alt:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+/* Bank cards — topic-colored left border */
+.lab-card--bank {
+  border-left: 4px solid var(--topic-color, var(--primary));
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lab-card--bank:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--topic-color, var(--primary));
+}
+
+/* Stub / coming-soon bank cards */
+.lab-card--stub {
+  opacity: 0.52;
+  pointer-events: none;
+  cursor: default;
+  filter: grayscale(25%);
+}
+
+.lab-card--stub:hover {
+  transform: none;
+  box-shadow: var(--shadow);
+}
+
+/* ============================================================
+   ROBIOLAB-INSPIRED ALT LAB PAGES
+============================================================ */
+
+/* Header gradient banner */
+.alt-lab-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  border-radius: 16px;
+  padding: 44px 40px;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.alt-lab-header::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 260px;
+  height: 260px;
+  background: rgba(255, 244, 217, 0.07);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.alt-lab-header::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: 30%;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.alt-lab-topic-tag {
+  display: inline-block;
+  background: var(--cream);
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.alt-lab-header h1 {
+  color: #fff;
+  font-size: 1.9rem;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.alt-lab-header .lab-subtitle {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 1rem;
+}
+
+/* Stat boxes (cream) */
+.alt-stat-box {
+  background: var(--cream);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+
+.alt-stat-label {
+  display: block;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-light);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.alt-stat-value {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+}
+
+/* Stat rows */
+.alt-stat-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.alt-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: #f7fafc;
+  border-radius: 8px;
+  font-size: 13px;
+  border: 1px solid var(--border);
+}
+
+.alt-val {
+  font-family: var(--mono);
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 12px;
+}
+
+/* Tabs enhanced for alt labs */
+.alt-lab .tabs {
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 28px;
+}
+
+.alt-lab .tab.active {
+  color: var(--primary);
+  border-bottom-color: var(--coral);
+}
+
+/* Smooth transitions on all interactive elements */
+.alt-lab .card,
+.alt-lab .viz-panel,
+.alt-lab .profile-chart,
+.alt-lab .controls-panel {
+  transition: box-shadow 0.2s ease;
+}
+
+.alt-lab .card:hover,
+.alt-lab .viz-panel:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* ============================================================
+   NAVBAR REFINEMENT (robiolab feel)
+============================================================ */
+.navbar {
+  background: var(--primary);
+  box-shadow: 0 2px 16px rgba(20, 36, 48, 0.3);
+}
+
+/* ============================================================
+   FOOTER REFINEMENT
+============================================================ */
+.footer {
+  background: var(--primary);
+  color: rgba(255, 255, 255, 0.5);
+}
+
