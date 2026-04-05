@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
+import VotePanel from './VotePanel'
 
 /* ============================================================
    DATA
@@ -218,6 +219,8 @@ export default function Home() {
               </button>
             ))}
           </div>
+
+          <VotePanel labs={bankLabs} />
 
           <div className="lab-cards">
             {filtered.map(lab =>
